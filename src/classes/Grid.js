@@ -4,6 +4,12 @@ class Grid {
     constructor(rows, cols) {
         this.rows = rows;
         this.cols = cols;
+
+        // -------- Clamp para mobile: no máximo 3 colunas --------
+        if (window.innerWidth < 1000) {
+            this.cols = Math.min(this.cols, 3);
+        }
+
         this.direction = "right";
         this.moveDown = false;
         this.boost = 0.1;
@@ -77,6 +83,11 @@ class Grid {
     }
 
     restart() {
+        // -------- Clamp para mobile também no restart --------
+        if (window.innerWidth < 1000) {
+            this.cols = Math.min(this.cols, 3);
+        }
+
         this.invaders = this.init();
         this.direction = "right";
     }

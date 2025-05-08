@@ -94,18 +94,15 @@ canvas.addEventListener("touchstart", (e) => {
 });
 
 canvas.addEventListener("touchmove", (e) => {
-    const newX = e.touches[0].clientX;
-    const dx = newX - touchX;
-
-    if (dx > 10) {
-        keys.right = true;
-        keys.left = false;
-    } else if (dx < -10) {
-        keys.left = true;
-        keys.right = false;
-    }
-
-    touchX = newX;
+    const touch = e.touches[0];
+    const rect = canvas.getBoundingClientRect();
+    // coordenada x relativa ao canvas
+    const x = touch.clientX - rect.left;
+    // centra a nave no dedo, limitando para dentro do canvas
+    player.position.x = Math.min(
+        Math.max(0, x - player.width / 2),
+        canvas.width - player.width
+    );
     e.preventDefault();
 });
 

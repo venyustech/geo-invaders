@@ -397,7 +397,7 @@ function winGame() {
 
     // Customiza o título
     const titleEl = gameOverScreen.querySelector("h1");
-    titleEl.textContent = "Ain feliz aniversariozinhown!";
+    titleEl.textContent = "Ain feliz aniversario!";
 
     // Cria ou atualiza parágrafo com mensagem especial
     let msgEl = gameOverScreen.querySelector(".win-message");

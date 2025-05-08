@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="src/style.css" />
+        <title>Space Invaders</title>
+    </head>
+    <body>
+        <!-- UI do Jogo -->
+        <section class="score-ui">
+            <div>
+                <span class="score">score: <span>0</span></span>
+                <span class="level">level: <span>1</span></span>
+                <span class="high">high: <span>0</span></span>
+            </div>
+        </section>
+
+        <!-- Tela Inicial com Título, Instruções e Play -->
+        <section class="start-screen screen">
+            <!-- 1. Título principal no topo -->
+            <div class="main-title">
+                <h1>Geórgia Invaders</h1>
+            </div>
+
+            <!-- 2. Instruções fixas acima do botão Play -->
+            <div class="instructions">
+                <img
+                    src="src/assets/images/capa.png"
+                    alt="Capa do Jogo"
+                    class="cover"
+                />
+                <div class="rules">
+                    <h3>Regras do Jogo:</h3>
+                    <br></br>
+                    <p>Alguns ataques estão ocorrendo a nave de Geórgia, ajude ela a vencer chegando a <strong>300 pontos</strong> e ganhe um presente misterioso</p>
+                    <br></br>
+
+                    <ul class="invader-list">
+                        <li>
+                            <img
+                                src="src/assets/images/invader1.png"
+                                alt="Invader1"
+                            />
+                            <em>homem hetero</em>  <strong>10 pontos</strong>
+                        </li>
+                        <li>
+                            <img
+                                src="src/assets/images/invader2.png"
+                                alt="Invader2"
+                            />
+                            <em>gay que se acha o maioral</em>
+                            <strong>20 pontos</strong>
+                        </li>
+                        <li>
+                            <img
+                                src="src/assets/images/invader3.png"
+                                alt="Invader3"
+                            />
+                            <em>agente choca ovos</em>
+                            <strong>30 pontos</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 3. Botão Play sempre acessível -->
+            <div class="start-content">
+                <button class="button-play">Iniciar</button>
+            </div>
+
+            <span>@venyustech</span>
+        </section>
+
+        <section class="game-over screen">
+            <div>
+                <h1>Perdeu, viado</h1>
+                <button class="button-restart">tenta de novo</button>
+            </div>
+        </section>
+
+        <canvas></canvas>
+        <script type="module" src="src/index.js"></script>
+    </body>
+</html>

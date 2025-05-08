@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Press Start 2P", sans-serif;
+}
+html,
+body {
+    overflow: hidden; /* oculta barras de rolagem e impede scroll */
+    height: 100%; /* garante que o body ocupe toda a altura */
+    margin: 0;
+    padding: 0;
+    touch-action: none; /* impede gestos de swipe no mobile */
+}
+
+canvas {
+    background-color: #121212;
+}
+
+.screen {
+    width: 100%;
+    height: 100dvh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    inset: 0;
+}
+
+/* Destaque geral de títulos */
+.screen h1 {
+    font-size: 2rem;
+}
+
+.screen span {
+    font-size: 0.6rem;
+    color: #aaa;
+    margin-top: auto;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.start-screen > div {
+    margin-top: auto;
+}
+
+.button-play,
+.button-restart {
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    background-color: #ddd;
+    display: block;
+    margin: 20px auto 0;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.button-play:hover,
+.button-restart:hover {
+    background-color: #fff;
+}
+
+.game-over {
+    scale: 0;
+    animation: zoom 2s ease-in-out forwards;
+}
+.game-over.screen > div {
+    width: 100%; /* ocupa toda a seção */
+    text-align: center; /* centraliza h1, botão e p.win-message */
+}
+@media (max-width: 1000px) {
+    .game-over.screen > div {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.score-ui {
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 40px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    display: none;
+}
+
+.score-ui > div {
+    display: flex;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@keyframes zoom {
+    from {
+        scale: 0;
+    }
+    to {
+        scale: 1;
+    }
+}
+
+/* ------------------- Título Principal ------------------- */
+.start-screen .main-title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.start-screen .main-title h1 {
+    font-size: 3rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* ------------------- Instruções e Capa ------------------- */
+.start-screen .instructions {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+.start-screen .instructions .cover {
+    max-width: 250px;
+    height: auto;
+    flex-shrink: 0;
+    border-radius: 8px;
+}
+
+.start-screen .instructions .rules {
+    flex: 1;
+    text-align: left;
+}
+
+.start-screen .instructions .rules h2 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.start-screen .instructions .rules p {
+    color: #ddd;
+    margin-bottom: 1rem;
+}
+
+.start-screen .instructions .invader-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 400px;
+}
+.start-screen .instructions .invader-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.start-screen .instructions .invader-list li strong {
+    margin-left: auto;
+}
+
+.start-screen .instructions .invader-list li em {
+    display: inline-block;
+    width: 150px;
+    text-align: left;
+}
+.start-screen .instructions .invader-list img {
+    width: 32px;
+    height: 32px;
+    margin-right: 0.5rem;
+}
+
+/* ------------------- Botão Play ------------------- */
+.start-screen .start-content {
+    text-align: center;
+    margin-bottom: auto;
+}
+
+@media (max-width: 1000px) {
+    /* Empilha cover e regras */
+    .start-screen .instructions {
+        flex-direction: column;
+        align-items: center; /* centraliza horizontalmente */
+        gap: 1rem; /* espaço entre cover e rules */
+    }
+
+    /* Dá margem na cover para separar da rules */
+    .start-screen .instructions .cover {
+        margin-bottom: 1rem;
+        max-width: 120px; /* de 250px para 120px */
+    }
+
+    /* Opcional: deixa o texto das regras com largura total */
+    .start-screen .instructions .rules {
+        width: 100%;
+        text-align: center; /* se quiser centralizar o texto */
+    }
+    .start-screen .main-title h1 {
+        font-size: 2rem; /* de 3rem para 2rem */
+    }
+}

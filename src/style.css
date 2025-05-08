@@ -212,4 +212,15 @@ canvas {
     .start-screen .main-title h1 {
         font-size: 2rem; /* de 3rem para 2rem */
     }
+    .start-screen .instructions .rules {
+        font-size: 0.7rem;
+    }
+    .start-screen .main-title {
+        margin-top: 3rem; /* margem superior maior */
+        margin-bottom: 0.5rem; /* margem inferior menor */
+    }
+    .start-screen .start-content {
+        margin-top: 0.5rem; /* diminui espaço superior */
+        margin-bottom: 3rem; /* aumenta espaço inferior */
+    }
 }
